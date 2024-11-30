@@ -1,1 +1,58 @@
-/* You can add global styles to this file, and also import other style files */
+// /* You can add global styles to this file, and also import other style files */
+// // @use 'custom';
+
+// // // IMPORT THE COMPONENTS
+// // @use 'components/animations';
+// // @use 'components/buttons';
+// // @use 'components/mixins';
+// // @use 'components/typography';
+//  @use 'assets/scss/components/animations';
+//  @use 'assets/scss/components/buttons';
+//  @use 'assets/scss/components/mixins';
+//  @use 'assets/scss/components/typography';
+
+//  @use 'assets/scss/sections/campanies';
+//  @use 'assets/scss/sections/faq';
+//  @use 'assets/scss/sections/footer';
+//  @use 'assets/scss/sections/get-started';
+//  @use 'assets/scss/sections/intro-section';
+//  @use 'assets/scss/sections/navbar';
+//  @use 'assets/scss/sections/portfolio';
+//  @use 'assets/scss/sections/services';
+//  @use 'assets/scss/sections/testimonials';
+
+// // // IMPORT THE SECTIONS
+// // @use 'sections/navbar';
+// // @use 'sections/intro-section';
+// // @use 'sections/campanies';
+// // @use 'sections/services';
+// // @use 'sections/testimonials';
+// // @use 'sections/faq';
+// // @use 'sections/portfolio';
+// // @use 'sections/get-started';
+// // @use 'sections/footer';
+
+$purple-dark: #9926f0;
+$purple-light: #BB6EF5;
+$pink: #d122e3;
+$footer: #151414;
+
+@import 'bootstrap/scss/bootstrap';
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+.gradient-text {
+  background: linear-gradient(45deg, $purple-light, $pink);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.section {
+  min-height: 100vh;
+  padding: 80px 0;
+}

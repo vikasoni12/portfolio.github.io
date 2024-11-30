@@ -1,0 +1,33 @@
+<section class="section about-section" id="about">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-lg-5">
+        <div class="about-image">
+          <img src="images/vikas.JPG" alt="Vikas Soni" class="img-fluid rounded-circle">
+          <div class="experience-badge">
+            <span class="years">2+</span>
+            <span class="text">Years<br>Experience</span>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-7">
+        <h2 class="gradient-text mb-4">About Me</h2>
+        <p class="lead mb-4">
+          Passionate Full Stack Developer with 5+ years of experience in building scalable web applications
+          and leading development teams.
+        </p>
+        <div class="skills-container">
+          <h3 class="h5 mb-3">Technical Skills</h3>
+          <div class="skill-tags">
+            <span class="skill-tag" *ngFor="let skill of skills">{{skill}}</span>
+          </div>
+        </div>
+        <div class="mt-4">
+          <a href="assets/resume.pdf" class="btn custom-btn" download>
+            Download Resume
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,33 @@
+.experience-section {
+  background-color: #f8f9fa;
+
+  .timeline {
+    position: relative;
+
+    &::before {
+      content: '';
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 2px;
+      height: 100%;
+      background: linear-gradient(#BB6EF5, #d122e3);
+    }
+  }
+
+  .timeline-item {
+    margin-bottom: 30px;
+    position: relative;
+
+    &::before {
+      content: '';
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 20px;
+      height: 20px;
+      background: #BB6EF5;
+      border-radius: 50%;
+    }
+  }
+}

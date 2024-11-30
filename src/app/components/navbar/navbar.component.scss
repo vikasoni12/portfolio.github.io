@@ -1,0 +1,30 @@
+nav {
+  transition: all 0.3s ease;
+  background-color: transparent;
+
+  &.scrolled {
+    background-color: rgba(#9926f0, 0.95);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  }
+
+  .nav-link {
+    color: white !important;
+    margin: 0 10px;
+    position: relative;
+
+    &::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      bottom: 0;
+      left: 0;
+      background: linear-gradient(45deg, #BB6EF5, #d122e3);
+      transition: width 0.3s ease;
+    }
+
+    &:hover::after {
+      width: 100%;
+    }
+  }
+}
