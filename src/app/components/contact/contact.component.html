@@ -4,47 +4,71 @@
       <div class="col-lg-8">
         <h2 class="text-center gradient-text mb-5">Get In Touch</h2>
         <div class="contact-form-container">
-          <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+          <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" novalidate>
             <div class="mb-4">
-              <input type="text" formControlName="name"
-                     class="form-control" placeholder="Your Name"
-                     >
-              <!-- <div class="invalid-feedback" *ngIf="submitted && f.name.errors?.['required']">
-                Name is required
-              </div> -->
+              <i class="ri-user-line"></i>
+              <input
+                type="text"
+                formControlName="name"
+                class="form-control"
+                placeholder="Your Name"
+                [ngClass]="{'is-invalid': submitted && contactForm.get('name')?.invalid}"
+              />
+              @if (submitted && contactForm.get('name')?.errors?.['required']) {
+                <div class="invalid-feedback">
+                  Name is required
+                </div>
+
+              }
             </div>
 
             <div class="mb-4">
-              <input type="email" formControlName="email"
-                     class="form-control" placeholder="Your Email"
-                     >
-              <!-- <div class="invalid-feedback" *ngIf="submitted && f.email.errors?.['required']">
-                Email is required
-              </div>
-              <div class="invalid-feedback" *ngIf="submitted && f.email.errors?.['email']">
-                Please enter a valid email
-              </div> -->
+              <i class="ri-mail-line"></i>
+              <input
+                type="email"
+                formControlName="email"
+                class="form-control"
+                placeholder="Your Email"
+                [ngClass]="{'is-invalid': submitted && contactForm.get('email')?.invalid}"
+              />
+              @if (submitted && contactForm.get('email')?.errors?.['required']) {
+                <div class="invalid-feedback" >
+                  Email is required
+                </div>
+              }@else if (submitted && contactForm.get('email')?.errors?.['email']) {
+                <div class="invalid-feedback" >
+                  Please enter a valid email
+                </div>
+              }
             </div>
 
             <div class="mb-4">
-              <textarea formControlName="message" class="form-control"
-                        rows="5" placeholder="Your Message"
-                        >
-              </textarea>
-              <!-- <div class="invalid-feedback" *ngIf="submitted && f.message.errors?.['required']">
-                Message is required
-              </div> -->
+              <i class="ri-message-line"></i>
+              <textarea
+                formControlName="message"
+                class="form-control"
+                rows="5"
+                placeholder="Your Message"
+                [ngClass]="{'is-invalid': submitted && contactForm.get('message')?.invalid}"
+              ></textarea>
+              @if (submitted && contactForm.get('message')?.errors?.['required']) {
+                <div class="invalid-feedback" >
+                  Message is required
+                </div>
+              }
             </div>
 
             <div class="text-center">
               <button type="submit" class="btn custom-btn" [disabled]="loading">
+                <i *ngIf="!loading" class="ri-send-plane-line mx-2"></i>
                 <span *ngIf="!loading">Send Message</span>
                 <span *ngIf="loading">
-                  <i class="fas fa-spinner fa-spin"></i> Sending...
+                  <i class="ri-loader-4-line ri-spin"></i> Sending...
                 </span>
               </button>
             </div>
           </form>
+
         </div>
       </div>
     </div>

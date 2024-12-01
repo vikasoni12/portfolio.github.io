@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
+import { FirestoreService } from '../../services/firestore.service';
 
 @Component({
   selector: 'app-contact',
@@ -14,7 +15,10 @@ export class ContactComponent {
   loading = false;
   submitted = false;
 
-  constructor(private formBuilder: FormBuilder) {}
+  constructor(
+    private formBuilder: FormBuilder,
+    private firestoreService: FirestoreService
+  ) {}
 
   ngOnInit() {
     this.contactForm = this.formBuilder.group({
@@ -34,13 +38,21 @@ export class ContactComponent {
     }
 
     this.loading = true;
-    // Implement your form submission logic here
-    // After submission:
-    setTimeout(() => {
-      this.loading = false;
-      this.contactForm.reset();
-      this.submitted = false;
-      // Show success message
-    }, 1500);
+
+    const formData = this.contactForm.value;
+
+    this.firestoreService.saveFormData(formData).then(
+      () => {
+        alert('Message sent successfully!');
+        this.contactForm.reset();
+        this.submitted = false;
+        this.loading = false;
+      },
+      (error) => {
+        console.error('Error saving message:', error);
+        alert('Failed to send the message. Please try again.');
+        this.loading = false;
+      }
+    );
   }
 }

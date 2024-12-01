@@ -13,40 +13,30 @@ export class ExperienceComponent {
 
   experiences: any[] = [
     {
-      role: 'Senior Full Stack Developer',
-      company: 'Tech Solutions Inc.',
-      period: '2022 - Present',
-      technologies: ['Angular', 'Node.js', 'MongoDB', 'AWS'],
+      role: 'Associate Software Engineer',
+      company: 'Step2gen Technologies',
+      period: 'Oct 2022 - Present',
+      technologies: ['Angular', 'PrimeNG', 'Hangfire', 'SendGrid', 'ABP.io','DataDog','Sentary','Tailwind',],
       description: [
-        'Led a team of 5 developers in building a cloud-based SaaS platform',
-        'Implemented microservices architecture reducing system latency by 40%',
-        'Developed CI/CD pipelines using GitHub Actions and AWS',
-        'Mentored junior developers and conducted code reviews'
-      ]
+        'Worked on various projects including manufacturing clothing management, event management systems, and asset management systems',
+        'Implemented features using Angular and PrimeNG to enhance UI/UX',
+        'Utilized Hangfire for background job scheduling and SendGrid for email delivery',
+        'Gained hands-on experience with ABP.io framework for rapid application development'
+      ],
+      current: true,
     },
     {
-      role: 'Full Stack Developer',
-      company: 'Digital Innovations LLC',
-      period: '2020 - 2022',
-      technologies: ['React', 'Express.js', 'PostgreSQL', 'Docker'],
+      role: 'Software Trainee',
+      company: 'Step2gen Technologies',
+      period: 'Feb 2022 - Sep 2022',
+      technologies: ['HTML', 'CSS', 'Bootstrap', 'JavaScript', 'C#', 'Entity Framework', 'Web API', 'SQL Server', 'Blazor'],
       description: [
-        'Developed and maintained multiple client-facing web applications',
-        'Implemented responsive designs and improved mobile UX',
-        'Reduced API response time by 60% through optimization',
-        'Collaborated with UX team to implement new features'
-      ]
+        'Learned and practiced foundational technologies including HTML, CSS, and JavaScript',
+        'Worked with C# and Entity Framework for backend development',
+        'Developed Web APIs and utilized SQL Server for database management',
+        'Explored Blazor for building interactive web UIs'
+      ],
+      current: false,
     },
-    {
-      role: 'Frontend Developer',
-      company: 'WebCraft Studios',
-      period: '2019 - 2020',
-      technologies: ['Vue.js', 'JavaScript', 'SCSS', 'RESTful APIs'],
-      description: [
-        'Built responsive web interfaces using Vue.js and SCSS',
-        'Integrated third-party APIs and payment gateways',
-        'Improved website performance scores by 25%',
-        'Participated in daily scrum meetings and sprint planning'
-      ]
-    }
   ];
 }

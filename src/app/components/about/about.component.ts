@@ -10,8 +10,8 @@ import { Component } from '@angular/core';
 })
 export class AboutComponent {
   skills: string[] = [
-    'Angular', 'React', 'Node.js', 'TypeScript',
-    'Python', 'MongoDB', 'PostgreSQL', 'AWS',
-    'Docker', 'Kubernetes', 'CI/CD', 'Git'
+    'Angular', '.Net Core','Abp.io','JavaScript', 'TypeScript','Bootstrap','Tailwind','SCSS','CSS',
+    'MySQL','SQL Server', 'Azure', 'AWS',
+    'Docker','CI/CD', 'Git'
   ];
 }

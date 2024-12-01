@@ -1,17 +1,30 @@
 <section class="section experience-section" id="experience">
-  <div class="container">
-    <h2 class="text-center mb-5 gradient-text">Experience</h2>
+  <h2 class="text-center mb-5 gradient-text">Experience</h2>
+  <div class="container experience-container">
+    <!-- Timeline Section -->
     <div class="timeline">
-      <div class="timeline-item" *ngFor="let exp of experiences">
+      <div
+        class="timeline-item"
+        *ngFor="let exp of experiences"
+        [ngClass]="{ 'current-company': exp.current }"
+      >
         <div class="timeline-content">
-          <h3>{{exp.role}}</h3>
-          <h4>{{exp.company}}</h4>
-          <p class="period">{{exp.period}}</p>
-          <ul>
-            <li *ngFor="let point of exp.description">{{point}}</li>
-          </ul>
+          <h3>{{ exp.role }}</h3>
+          <h4>{{ exp.company }}</h4>
+          <p class="period">{{ exp.period }}</p>
+          <div class="description-content">
+            <div class="skill-tags">
+              <span class="skill-tag" *ngFor="let skill of exp.technologies">{{skill}}</span>
+            </div>
+            <ul >
+              <li *ngFor="let point of exp.description">{{ point }}</li>
+            </ul>
+          </div>
         </div>
       </div>
     </div>
+
+    <!-- Background Image Div -->
+    <div class="timeline-image-background"></div>
   </div>
 </section>
