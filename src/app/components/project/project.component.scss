@@ -1,13 +1,19 @@
 .projects-section {
   .project-card {
+    display: flex;
+    flex-direction: column;
     background: white;
     border-radius: 15px;
     overflow: hidden;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
+    box-shadow: 0 5px 15px rgba(217, 23, 194, 0.2); // Default subtle shadow
+    transition: transform 0.3s ease, box-shadow 0.3s ease, cursor 0.3s ease;
+    height: 100%; // Ensures all cards take equal height
+    cursor: pointer; // Add pointer cursor
 
     &:hover {
-      transform: translateY(-5px);
+      transform: scale(1.05); // Slight grow effect on hover
+      box-shadow: 0 10px 30px rgba(218, 7, 233, 0.5); // Darker shadow on hover
+      cursor: pointer;
 
       .project-overlay {
         opacity: 1;
@@ -16,7 +22,7 @@
 
     .project-image {
       position: relative;
-      height: 200px;
+      height: 200px; // Fixed height for consistent image size
 
       img {
         width: 100%;
@@ -52,11 +58,22 @@
     }
 
     .project-content {
+      flex-grow: 1; // Push content to fill available space
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
       padding: 20px;
 
       h3 {
         font-size: 1.2rem;
         margin-bottom: 10px;
+        color: #333;
+      }
+
+      p {
+        flex-grow: 1; // Fill space between title and technologies
+        font-size: 1rem;
+        color: #555;
       }
 
       .project-tech {
@@ -72,6 +89,33 @@
           border-radius: 15px;
           color: #9926f0;
         }
+      }
+    }
+  }
+
+  // Make project cards equal height and responsive
+  .row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+
+    .col-md-6,
+    .col-lg-4 {
+      display: flex;
+      flex: 1 1 calc(33.333% - 20px); // 3 cards per row by default
+    }
+
+    @media (max-width: 992px) {
+      .col-md-6,
+      .col-lg-4 {
+        flex: 1 1 calc(50% - 20px); // 2 cards per row for tablets
+      }
+    }
+
+    @media (max-width: 768px) {
+      .col-md-6,
+      .col-lg-4 {
+        flex: 1 1 100%; // 1 card per row for mobile
       }
     }
   }

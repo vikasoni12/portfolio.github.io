@@ -14,7 +14,7 @@
       position: absolute;
       right: 0;
       bottom: 30px;
-      background: linear-gradient(45deg, #d122e3, #d122e3);
+      background: linear-gradient(45deg, #BB6EF5, #d122e3);
       color: white;
       padding: 20px;
       border-radius: 50%;
@@ -44,5 +44,22 @@
       border-radius: 20px;
       font-size: 0.9rem;
     }
+  }
+}
+
+.custom-btn {
+  // background: linear-gradient(45deg, #BB6EF5, #d122e3);
+  background:white;
+  border: 2px solid #9926f0;
+  color: #9926f0;
+  padding: 12px 30px;
+  border-radius: 30px;
+  transition: all 0.3s ease;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(#d122e3, 0.3);
+    background: #9926f0;
+    color: white;
   }
 }
